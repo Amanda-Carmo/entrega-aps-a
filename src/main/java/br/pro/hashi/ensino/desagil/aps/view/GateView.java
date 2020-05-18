@@ -42,8 +42,10 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
             gate.connect(i, switches[i]);
             if (gate.getInputSize() == 1) {
                 add(checkBoxes[i], 15, HEIGHT / 2 - 10, 20, 20);
-            } else {
+            } else if (gate.getInputSize() == 2){
                 add(checkBoxes[i], 15, HEIGHT * i / (gate.getInputSize() + 1) + 20 + 19 * i, 20, 20);
+            }else if (gate.getInputSize() == 3){
+                add(checkBoxes[i], 15, HEIGHT * (2 * i) / (gate.getInputSize() + 1) + 20 + 19 * i, 20, 20);
             }
         }
 
